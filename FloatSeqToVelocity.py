@@ -15,7 +15,7 @@
 
 """
 import sys
-import time
+
 sys.path.append(".")
 
 # Import RTM module
@@ -333,7 +333,7 @@ def MyModuleInit(manager):
     FloatSeqToVelocityInit(manager)
 
     # Create a component
-    comp = manager.createComponent("FloatSeqToVelocity")
+    manager.createComponent("FloatSeqToVelocity")
 
 def main():
 	mgr = OpenRTM_aist.Manager.init(sys.argv)
