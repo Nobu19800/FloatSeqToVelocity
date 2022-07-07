@@ -68,8 +68,7 @@ class DataListener(OpenRTM_aist.ConnectorDataListenerT):
   def __del__(self):
     pass
 
-  def __call__(self, info, cdrdata):
-    data = OpenRTM_aist.ConnectorDataListenerT.__call__(self, info, cdrdata, RTC.TimedFloatSeq(RTC.Time(0,0),[]))
+  def __call__(self, info, data):
     if len(data.data) >= 2:
         self._out.data.vx = data.data[1] * self._velocity_by_position[0]
         self._out.data.vy = 0
